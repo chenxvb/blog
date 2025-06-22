@@ -10,61 +10,61 @@
     <link>https://v10r.com/</link>
     <guid>https://v10r.com/</guid>
     <description>本站由 Quartz v4，github page，CF DNS 部署 旧博客已封存，这个站主要记录个人笔记和小作文 写作很累，时间很少，更新不太多 环境配置参考此文 常用指令 npx quartz build --serve npx quartz sync --no-pull .</description>
-    <pubDate>Sun, 22 Jun 2025 13:38:17 GMT</pubDate>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
-    <title>UNITY 游戏汉化 解包封包</title>
-    <link>https://v10r.com/%E9%80%86%E5%90%91/UNITY-il2CPP-%E6%B8%B8%E6%88%8F%E6%B1%89%E5%8C%96%E6%95%99%E7%A8%8B-%E8%A7%A3%E5%8C%85%E5%B0%81%E5%8C%85</link>
-    <guid>https://v10r.com/%E9%80%86%E5%90%91/UNITY-il2CPP-%E6%B8%B8%E6%88%8F%E6%B1%89%E5%8C%96%E6%95%99%E7%A8%8B-%E8%A7%A3%E5%8C%85%E5%B0%81%E5%8C%85</guid>
-    <description>前言 UNITY 的解包封包的汉化不太适合啥都不明白的小白，需要一点的技术阅历和编写基础文件操作代码的能力。 如果你只是想自己玩的爽的话可以转身去其他插件汉化以及 Hook 汉化的文章 0.</description>
-    <pubDate>Sun, 22 Jun 2025 13:34:41 GMT</pubDate>
+    <title>Pwn 复健————CSU, 格式化字符串, ret2syscall, 微偏移量, alarm 利用</title>
+    <link>https://v10r.com/pwn/pwn-%E5%A4%8D%E5%81%A5-(2)</link>
+    <guid>https://v10r.com/pwn/pwn-%E5%A4%8D%E5%81%A5-(2)</guid>
+    <description>最近还在复建栈溢出，做点小笔记 今天重新学习了一下 Pwndbg 使用，CSU 构造模板，格式化字符串，ret2syscall，微偏移量 和 alarm 的知识 Pwndbg 常用指令 断点：b + func 符号，b + * + 函数地址 打印栈：stack + num 打印内存：x/(num)(x,d,s) + 内存地址; x 为16 进展，d 为整数，s 为字符串 单步步入：s 单步步过：n 运行到函数断点：c ret2csu 省流 常用 csu 模板： def csu(rdi=0, rsi=0, rdx=0, r12=0, rbx=0, rbp=1): # csu模板 gadget_1...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
-    <title>zpoline 新 hook 思路</title>
-    <link>https://v10r.com/%E9%80%86%E5%90%91/zpoline-%E6%96%B0-hook-%E6%80%9D%E8%B7%AF</link>
-    <guid>https://v10r.com/%E9%80%86%E5%90%91/zpoline-%E6%96%B0-hook-%E6%80%9D%E8%B7%AF</guid>
-    <description>zpoline: a system call hook mechanism based on binary rewriting 之前还在暑假实习时做的论文分享 system call hook 一张图概括 hook 0x0f 0x05 再取后面的参数 如何 hook 呢？常规方法有用系统提供的，如：eBPF，Ptrace，Syscall User Dispatch (SUD)，LD_PRELOAD 也有改写指令的：int3 (0xCC) breakpoint，Syscall User Dispatch (SUD) 但是系统提供如 ptrace 往往有各种限制，改写 0xCC 的算上调试器又很慢...</description>
-    <pubDate>Mon, 09 Jun 2025 09:19:35 GMT</pubDate>
-  </item><item>
-    <title>用 ndk 编译 capstone</title>
-    <link>https://v10r.com/%E9%80%86%E5%90%91/%E7%94%A8-ndk-%E7%BC%96%E8%AF%91-capstone</link>
-    <guid>https://v10r.com/%E9%80%86%E5%90%91/%E7%94%A8-ndk-%E7%BC%96%E8%AF%91-capstone</guid>
-    <description>如何编译 capstone 的 ndk android 跨平台库 感觉 NDK 已经半截入土了，很多软件的新版本都很少用到 ndk，谷歌感觉在这方面也摆烂了。印象中貌似现在的 android native 开发也开始用 cmake 替代了，反正后面肯定是要寄了。 但我现在有个项目就要在 ndk 用到 capstone ，查了下发现之前 capstone 都是有支持的，但现在的新文档都没有提到 ndk，为了保险我这边还是选择了老版本的 capstone (master 分支) 在该分支的文件里中有明确写道： (5) Cross-compile for Android To cross-compi...</description>
-    <pubDate>Mon, 09 Jun 2025 08:57:11 GMT</pubDate>
+    <title>Pwn 栈溢出复建</title>
+    <link>https://v10r.com/pwn/pwn-%E6%A0%88%E6%BA%A2%E5%87%BA%E5%A4%8D%E5%BB%BA</link>
+    <guid>https://v10r.com/pwn/pwn-%E6%A0%88%E6%BA%A2%E5%87%BA%E5%A4%8D%E5%BB%BA</guid>
+    <description>起因 很久没有接触过 pwn 了，上次学 pwn 还在一年多前学到堆。最近想重新捡起来 pwn 的知识，复建一下。顺便看看能不能把 blog 捡起来。 本篇文章会记录一下复现栈溢出的细节，顺便重新学一下之前没彻底搞懂的知识点 工具整理 调试工具：pwndbg python 库：pwntools 调试界面配置（效果如图）：splitmind 看雪 ​ tmux 启用鼠标操作指令（默认关闭）：tmux set-option -g mouse on 标准解题 exp 模板： from pwn import * # context.terminal=[&#039;tmux&#039;,&#039;sp...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
     <title>对国内外科研现状的失望</title>
     <link>https://v10r.com/%E6%80%9D%E8%80%83/%E5%AF%B9%E5%9B%BD%E5%86%85%E5%A4%96%E7%A7%91%E7%A0%94%E7%8E%B0%E7%8A%B6%E7%9A%84%E5%A4%B1%E6%9C%9B</link>
     <guid>https://v10r.com/%E6%80%9D%E8%80%83/%E5%AF%B9%E5%9B%BD%E5%86%85%E5%A4%96%E7%A7%91%E7%A0%94%E7%8E%B0%E7%8A%B6%E7%9A%84%E5%A4%B1%E6%9C%9B</guid>
     <description>title: 对国内外科研现状的失望 author: vior tags: 随笔 categories: write up abbrlink: 12341234 date: 2023-12-15 07:24:00 对国内外科研现状的失望 个人的碎碎念 前言 说在前面，我并不是一个资深的科研人员从业者。作为一个仅仅只是在科研门口浅尝辄止的人，光我触及到的科研现状就足以让人胆颤心惊。夸张的说，大部分科研成果，看着无比恢弘，但大部分只是一群草班台子撑着的一场戏罢了。除了少部分真正领域内的天才，其他人只是仰仗着组里积累的成果，小心翼翼的，生怕挤牙膏挤多了，一点点的将这个成果转化为论文。论文再来增加自己...</description>
-    <pubDate>Mon, 09 Jun 2025 07:19:01 GMT</pubDate>
-  </item><item>
-    <title>逆向模板</title>
-    <link>https://v10r.com/%E9%80%86%E5%90%91/%E9%80%86%E5%90%91%E6%B5%8B%E8%AF%95</link>
-    <guid>https://v10r.com/%E9%80%86%E5%90%91/%E9%80%86%E5%90%91%E6%B5%8B%E8%AF%95</guid>
-    <description>The rest of your content lives here. You can use Markdown here :) 测试测试测试.</description>
-    <pubDate>Mon, 09 Jun 2025 07:17:16 GMT</pubDate>
-  </item><item>
-    <title>cs144lab2</title>
-    <link>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab2</link>
-    <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab2</guid>
-    <description>CS144 lab 2 Receiver 实现 tcp receiver 和 Wrap32 Wrap32 因为 tcp 中的字节数很宝贵，也可能是当时的时代局限。导致 ackno 的字节数只占 32 bits，为了使其适应 64 bits 和一些其他目的，要编写 Wrap 32 这个结构体 Wrap32 Wrap32::wrap( uint64_t n, Wrap32 zero_point ) 64 位转成 32 位 zero_point 指初始 SYN 的 ack 序号，因为它是随意的。但单论我们这次 tcp 连接中它是逻辑上的 0，也就是下面的 absolute seqno，因此 wrap...</description>
-    <pubDate>Mon, 09 Jun 2025 07:17:06 GMT</pubDate>
-  </item><item>
-    <title>cs144lab1</title>
-    <link>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab1</link>
-    <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab1</guid>
-    <description>CS144 Lab 1 Stream Reassembler : 实现 stream Reassembler 流组装器，也就是流重组器 {:height 480, :width 750} 不同协议的 ack 收发方式不同，在这边默认是 ack 乱序收发，这里关系不大。只是需要把在空间内能存的存了。但是如果卡了一个包没收那就不能收了 Reassembler void Reassembler::insert( uint64_t first_index, string data, bool is_last_substring ) 插入 byte，这个在处理一些长度是很麻烦。（因为长度超过 capac...</description>
-    <pubDate>Mon, 09 Jun 2025 07:16:48 GMT</pubDate>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
     <title>cs144lab0</title>
     <link>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab0</link>
     <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab0</guid>
     <description>CS144 Lab 0: git clone github.com/cs144/minnow CS144 lab 0 分别有两部分 task task 1 是用命令行工具和调库来实现对 http 协议的仿真 task 2 是实现 socket 底层的 byteStream, 用于暂存接收数据 Task 1 要求用 TCPSocket 和 ADDRESS 实现，搜了下发现是 socket.h 的库 直接样样例掉包不到 10 行，doc TCPSocket sock; sock.connect( Address(host, &quot;http&quot;) ); sock.write( &quo...</description>
-    <pubDate>Mon, 09 Jun 2025 07:16:13 GMT</pubDate>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
-    <title>论文笔记: Accurate Channel Prediction Based on Transformer: Making Mobility Negligible</title>
-    <link>https://v10r.com/%E9%80%9A%E4%BF%A1/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0_Accurate_Channel_Prediction_Based_on_transformer_Making_Mobility_Negligible</link>
-    <guid>https://v10r.com/%E9%80%9A%E4%BF%A1/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0_Accurate_Channel_Prediction_Based_on_transformer_Making_Mobility_Negligible</guid>
-    <description>论文笔记：Accurate Channel Prediction Based on Transformer: Making Mobility Negligible (基于 transformer 的准确信道预测：消除运动产生的误差) 小总结 为了解决由于高频信号的高速移动导致的channel aging, 很多人提出了不同的方法来解决。其中信道估计是其中较为热门的一个方向 我们的作者在神经网络的预测（the neural network-based methods） 方向中发现了其大多数模型存在 error propagation problem, 于是他们选择使用 transformer 来...</description>
-    <pubDate>Mon, 09 Jun 2025 07:15:30 GMT</pubDate>
+    <title>cs144lab1</title>
+    <link>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab1</link>
+    <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab1</guid>
+    <description>CS144 Lab 1 Stream Reassembler : 实现 stream Reassembler 流组装器，也就是流重组器 {:height 480, :width 750} 不同协议的 ack 收发方式不同，在这边默认是 ack 乱序收发，这里关系不大。只是需要把在空间内能存的存了。但是如果卡了一个包没收那就不能收了 Reassembler void Reassembler::insert( uint64_t first_index, string data, bool is_last_substring ) 插入 byte，这个在处理一些长度是很麻烦。（因为长度超过 capac...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
+  </item><item>
+    <title>cs144lab2</title>
+    <link>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab2</link>
+    <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/cs144lab2</guid>
+    <description>CS144 lab 2 Receiver 实现 tcp receiver 和 Wrap32 Wrap32 因为 tcp 中的字节数很宝贵，也可能是当时的时代局限。导致 ackno 的字节数只占 32 bits，为了使其适应 64 bits 和一些其他目的，要编写 Wrap 32 这个结构体 Wrap32 Wrap32::wrap( uint64_t n, Wrap32 zero_point ) 64 位转成 32 位 zero_point 指初始 SYN 的 ack 序号，因为它是随意的。但单论我们这次 tcp 连接中它是逻辑上的 0，也就是下面的 absolute seqno，因此 wrap...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
+  </item><item>
+    <title>千兆更新笔记</title>
+    <link>https://v10r.com/%E7%BD%91%E7%BB%9C/%E5%8D%83%E5%85%86%E6%9B%B4%E6%96%B0</link>
+    <guid>https://v10r.com/%E7%BD%91%E7%BB%9C/%E5%8D%83%E5%85%86%E6%9B%B4%E6%96%B0</guid>
+    <description>0 起因 我之前一直不满家里的百兆带宽，原因很简单: 百兆在普通家庭里打游戏，看视频或许够用，但对于在学校用惯 300m 带宽的我来说完全不够。 更何况，由于家里在我前一两年的折腾下已经装上软路由和 NAS 这两个可以吃高网速的设备，这让我对千兆网络更加的憧憬。我的 Steam 下载，BT 服务器等服务器带宽只能卡在 100 M 上上下下。 后来，我得知了我家里已经开通了千兆网，但据实际测速仍然是百兆。遂打电话投诉。然而等装网大哥到了测速才发现我家里是实实在在开通了千兆带宽，只是中间的设备不支持。 看着网速测试仪直插路由器，测速网居然能在我的肉眼下跑到千兆！宛如神迹！于是我就迫不及待地开始折腾...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
+  </item><item>
+    <title>UNITY 游戏汉化 解包封包</title>
+    <link>https://v10r.com/%E9%80%86%E5%90%91/UNITY-il2CPP-%E6%B8%B8%E6%88%8F%E6%B1%89%E5%8C%96%E6%95%99%E7%A8%8B-%E8%A7%A3%E5%8C%85%E5%B0%81%E5%8C%85</link>
+    <guid>https://v10r.com/%E9%80%86%E5%90%91/UNITY-il2CPP-%E6%B8%B8%E6%88%8F%E6%B1%89%E5%8C%96%E6%95%99%E7%A8%8B-%E8%A7%A3%E5%8C%85%E5%B0%81%E5%8C%85</guid>
+    <description>前言 UNITY 的解包封包的汉化不太适合啥都不明白的小白，需要一点的技术阅历和编写基础文件操作代码的能力。 如果你只是想自己玩的爽的话可以转身去其他插件汉化以及 Hook 汉化的文章 0.</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
+  </item><item>
+    <title>android inline hook demo 实现</title>
+    <link>https://v10r.com/%E9%80%86%E5%90%91/android-inline-hook-demo-%E5%AE%9E%E7%8E%B0</link>
+    <guid>https://v10r.com/%E9%80%86%E5%90%91/android-inline-hook-demo-%E5%AE%9E%E7%8E%B0</guid>
+    <description>android inline hook demo 实现 如何实现一个安卓的 inline hook demo？实际上不太难，核心思想就是用 ptrace 进入进程，然后再在内存空间分配 payload，再把函数点替换成跳板函数跳到我们的 payload 里，同时实现上下文保存。执行完后再执行源代码返回 虽然基础逻辑不太难，但是一些细节实现还是有点麻烦。最开始要想 ptrace 成功 attach，需要一系列的自动化获取 pid，修改内存，还有获取关键的系统函数 mmap 啥的。这部分参考前人的代码，还算是有简单的脚手架可以用。也参考过 frida 的实现，但是其实现的耦合程度有点高，要想提取出...</description>
+    <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item>
     </channel>
   </rss>
