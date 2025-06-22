@@ -9,7 +9,7 @@
     <title>个人笔记</title>
     <link>https://v10r.com/</link>
     <guid>https://v10r.com/</guid>
-    <description>本站由 Quartz v4，github page，CF DNS 部署 旧博客已封存，这个站主要记录个人笔记和小作文 写作很累，时间很少，更新不太多 环境配置参考此文 常用指令 npx quartz build --serve npx quartz sync --no-pull .</description>
+    <description>本站由 Quartz v4，github page，CF DNS 部署 旧博客已封存，这个站主要记录个人笔记和小作文 写作很累，时间很少，更新不太多 环境配置参考此文 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD 常用指令 npx quartz build --serve npx quartz sync --no-pull ======= 429332996701ed7d7bb5400adf9f1d7e3d742cb4 .</description>
     <pubDate>Sun, 22 Jun 2025 15:18:24 GMT</pubDate>
   </item><item>
     <title>Pwn 复健————CSU, 格式化字符串, ret2syscall, 微偏移量, alarm 利用</title>
