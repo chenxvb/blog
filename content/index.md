@@ -10,4 +10,17 @@ title: 个人笔记
 
 环境配置参考[此文](https://quartz.jzhao.xyz/)
 
+<<<<<<< HEAD
+常用指令 
+
+```
+npx quartz build --serve 
+```
+
+```
+npx quartz sync --no-pull
+```
+
+=======
 ### 
+>>>>>>> 429332996701ed7d7bb5400adf9f1d7e3d742cb4
